@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="text">Hello, My name is kamla</p>
+    <p class="text">I am a student at navgurukul</p>
+    <p class="text">I am doing software engineering corse</p>
+
+    <button id="btn">change</button>
+    <script>
+        let t = document.getElementsByClassName("text");
+        let b = document.getElementById("btn");
+
+        b.onclick = function (){
+            t[0].style.color = "pink";
+            t[1].style.color = "green";
+            t[2].style.color = "yellow";
+        };
+
+    </script>
+</body>
+</html>
