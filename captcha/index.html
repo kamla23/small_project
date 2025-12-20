@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup with Captcha</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+    }
+    .box {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      margin: 100px auto;
+      border-radius: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+    .captcha {
+      font-weight: bold;
+      letter-spacing: 3px;
+      background: #eee;
+      text-align: center;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Sign Up</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <div class="captcha" id="captCode"></div>
+
+    <input type="text" id="captInput" placeholder="Enter captcha">
+
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="msg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>querySelectorAll Practical</title>
+</head>
+<body>
+
+  <p class="text">Paragraph One</p>
+  <p class="text">Paragraph Two</p>
+  <p class="text">Paragraph Three</p>
+
+  <button id="btn">Change All</button>
+
+<script>
+
+  let paras = document.querySelectorAll(".text");
+  let btn = document.getElementById("btn");
+
+  btn.onclick = function () {
+    paras.forEach(function(p) {
+      p.style.color = "blue";
+    });
+  };
+</script>
+
+</body>
+</html>

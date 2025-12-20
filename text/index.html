@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p id="p1">Hello <span style="display:none">Hidden</span> World</p>
+<button onclick="changeText()">Change</button>
+
+<p id="p2">Hello <span style="display:none">Hidden</span> World</p>
+<button onclick="showText()">Show</button>
+
+<div id="box"></div>
+<button onclick="addHTML()">Add</button>
+
+
+
+</body>
+<script>
+    function changeText() {
+  let p = document.getElementById("p1");
+  p.innerText = "I am using innerText";
+}
+
+
+function showText() {
+  let p = document.getElementById("p2");
+  alert(p.textContent);
+}
+
+function addHTML() {
+  let d = document.getElementById("box");
+  d.innerHTML = "<h2>Hello</h2><p>This is HTML</p>";
+}
+
+
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>querySelector Practical</title>
+</head>
+<body>
+
+  <p class="text">First Paragraph</p>
+  <p class="text">Second Paragraph</p>
+
+  <button id="btn">Change First Only</button>
+
+<script>
+
+  let p = document.querySelector(".text");
+  let btn = document.getElementById("btn");
+
+  btn.onclick = function () {
+    p.innerText = "I am changed";
+    p.style.color = "red";
+  };
+</script>
+
+</body>
+</html>
