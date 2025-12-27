@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo task</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .todo-box {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 70%;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .todo-item {
+      padding: 10px;
+      margin-top: 8px;
+      background: #eee;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+  <body>
+    <div class="todo-box">
+      <h1>My Todo task</h1>
+      <input type="text" id="taskInput" placeholder="Enter task" />
+      <button id="addBtn">Add</button>
+      <div id="todoList"></div>
+    </div>
+  </body>
+  <script>
+    let input = document.querySelector("#taskInput");
+    let addBtn = document.querySelector("#addBtn");
+    let todoList = document.querySelector("#todoList");
+
+    addBtn.onclick = function () {
+      if (input.value === "") return;
+
+      let div = document.createElement("div");
+      div.className = "todo-item";
+      div.innerText = input.value;
+
+      div.addEventListener("click", function () {
+      div.classList.toggle("completed");
+    });
+
+      todoList.appendChild(div);
+      input.value = "";
+    };
+
+  </script>
+</html>

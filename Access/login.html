@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+.log-box {
+    width: 320px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.log-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.log-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.log-box input:focus {
+    border-color: #007bff;
+}
+#logbtn {
+    width: 100%;
+    padding: 10px;
+    background: #e3754e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#logbtn:hover {
+    background: #cc8989;
+}
+.err {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+<body>
+    <div class="log-box">
+        <h1>Login</h1>
+        <input type="email" id="email" placeholder="Enter email">
+        <input type="password" id="passaword" placeholder="Enter password">
+        <button id="logbtn">Login</button>
+        <p class="err"></p>
+    </div>
+    <script>
+        let email = document.querySelector("#email");
+        let passaword = document.querySelector("#passaword");
+        let button = document.querySelector("#logbtn");
+        let error = document.querySelector(".err"); 
+
+        button.onclick = function(){
+            let emailValue = email.value;
+            let atIndex = emailValue.indexOf("@");
+            let dotIndex = emailValue.lastIndexOf(".");
+
+            if(email.value === "" && passaword.value === ""){
+                error.innerText = "Email and Passaword are required";
+                error.style.color = "red";
+            }else if(email.value === ""){
+                error.innerText = "Email is required";
+                error.style.color = "red";
+            }else if(atIndex === -1 || dotIndex === -1 || atIndex > dotIndex){
+                error.innerText = "Please enter a valid email";
+                error.style.color = "red";
+            }
+            else if(passaword.value === ""){
+                error.innerText = "Passaword is required";
+            }else{
+                error.innerText = "Login is Successfull";
+                error.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

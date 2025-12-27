@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card</title>
+  </head>
+  <style>
+    .card {
+      width: 200px;
+      padding: 15px;
+      margin: 10px;
+      background: #f2b059;
+      display: inline-block;
+    }
+  </style>
+  <body>
+    <h1>Multiple card</h1>
+    <div class="card">1</div>
+    <div class="card">2</div>
+    <div class="card">3</div>
+    <br />
+
+    <button id="btn">Click</button>
+  </body>
+  <script>
+    let cards = document.getElementsByClassName("card");
+    let btn = document.getElementById("btn");
+
+    btn.onclick = function(){
+      for(let i = 0; i <  cards.length; i++){
+        cards[i].style.border = "2px solid black";
+      } 
+    };
+  </script>
+</html>
